@@ -1,0 +1,16 @@
+name: mutable_copy
+description: Copy imutable object with help mutable copy.
+version: 0.1.0
+# author: Alex Vegner <alexvegner@gmail.com>
+repository: https://github.com/AlexVegner/mutable_copy
+issue_tracker: https://github.com/AlexVegner/mutable_copy/issues
+homepage: https://github.com/AlexVegner/mutable_copy
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+
+
+dev_dependencies:
+  test: ^1.9.4
