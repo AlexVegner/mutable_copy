@@ -1,7 +1,7 @@
 import 'package:mutable_copy/mutable_copy.dart';
 
 main() {
-  final e1 = Employee(
+  final e1 = Employe(
     fullName: 'Max Hatson',
     department: 'Mobile',
     team: 'Flutter',
@@ -10,12 +10,12 @@ main() {
   print(eMutable);
 }
 
-class Employee {
+class Employe {
   final String fullName;
   final String department;
   final String team;
 
-  Employee({
+  Employe({
     this.fullName,
     this.department,
     this.team,
@@ -27,7 +27,7 @@ class Employee {
   }
 }
 
-extension EmployeeMutableCopyExt on Employee {
+extension EmployeeMutableCopyExt on Employe {
   EmployeeMutable mutableCopy() {
     return EmployeeMutable(
       fullName: fullName,
@@ -36,12 +36,12 @@ extension EmployeeMutableCopyExt on Employee {
     );
   }
 
-  Employee copy(UpdateWith<EmployeeMutable> updateWith) {
+  Employe copy(UpdateWith<EmployeeMutable> updateWith) {
     return updateWith(mutableCopy()).copy();
   }
 }
 
-class EmployeeMutable with Mutable<Employee> {
+class EmployeeMutable with Mutable<Employe> {
   String fullName;
   String department;
   String team;
@@ -53,8 +53,8 @@ class EmployeeMutable with Mutable<Employee> {
   });
 
   @override
-  Employee copy() {
-    return Employee(
+  Employe copy() {
+    return Employe(
       fullName: fullName,
       department: department,
       team: team,

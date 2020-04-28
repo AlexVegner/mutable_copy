@@ -1,3 +1,15 @@
+## 0.2.5
+
+* Update Readme
+
+## 0.2.4
+
+* Update Readme
+
+## 0.2.2
+
+* Update Readme
+
 ## 0.2.0
 
 * Add code generator support
