@@ -84,14 +84,13 @@ class EmployeeMutable with Mutable<Employee> {
 }
 ```
 
-## TODO
-
 # Code generation
-Implement code generator for `mutable_copy`
-
-Like it done for copy_with [copy_with](https://www.oleksandrkirichenko.com/blog/dart-extensions/)
+Code generator for [mutable_copy](https://pub.dev/packages/mutable_copy_generator/)
 
 ```dart
+import 'package:mutable_copy/mutable_copy.dart';
+
+@imutable
 @MutableCopy
 class Employee {
   final String fullName;
@@ -104,5 +103,10 @@ class Employee {
     this.team,
   });
 }
+```
+
+# Generate code 
+```
+pub run build_runner build
 ```
 

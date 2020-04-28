@@ -1,6 +1,6 @@
 name: mutable_copy
 description: MutableCopy simplify copy of immutable object. Unlike CopyWith, it allow to set null value.
-version: 0.1.3
+version: 0.2.0
 # author: Alex Vegner <alexvegner@gmail.com>
 repository: https://github.com/AlexVegner/mutable_copy
 issue_tracker: https://github.com/AlexVegner/mutable_copy/issues
