@@ -84,67 +84,6 @@ class EmployeeMutable with Mutable<Employee> {
 }
 ```
 
-# Udage
-
-`ExEvent` provide business logic and payload
-
-`ExStore` provide ability to dispatch other events or get other states. 
-
-```dart
-class TestEvent extends ExEvent<TestState, TestBloc> {
-  @override
-  Stream<TestState> call(ExStore store, TestBloc bloc) async* {
-    yield TestState(afterInitial: true);
-  }
-}
-```
-
-# Dispatch events
-
-```dart
-store.dispatch(TestEvent());
-```
-or
-```dart
-TestEvent().dispatch();
-```
-
-# Get state from ExStore
-
-```dart
-final store = ExStore.instance;
-final testState = store.getState<TestState>();
-```
-
-
-# Subscribe event
-
-```dart
-final _subscribeSpecific = ExStore.instance.on<TestEvent>().listen((e) => print('do something'));
-final _subscribeAny = ExStore.instance.on().listen((e) => print('do something'));
-_subscribeSpecific.cancel();
-_subscribeAny.cancel();
-```
-
-# Wait for event
-
-```dart
-await ExStore.instance.wait<TestEvent>();
-```
-
-# Reselect usage
-
-[Reselect](https://pub.dev/packages/reselect) can be used if needed
-
-```dart
-final testStateSelector = (ExStore store) => store.getState<TestState>();
-
-final afterInitialSelector = createSelector1(
-    testStateSelector,
-    (TestState testState) => testState.afterInitial,
-);
-```
-
 ## TODO
 
 # Code generation
